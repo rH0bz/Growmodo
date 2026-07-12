@@ -1,0 +1,22 @@
+/**
+ * Editor-canvas Tailwind entry -> build/editor.css
+ * No @tailwind base (no preflight) and no _reset.css import, so wp-admin /
+ * Gutenberg chrome is never touched — only the block canvas (its own iframe)
+ * picks up brand components + utilities.
+ *
+ * The canvas <body> still needs the base background/text + icon-font settings
+ * the live site gets from _reset.css — added here directly (not via @layer
+ * base, which would require a matching @tailwind base in this same file).
+ */
+@import './_brand.css';
+
+body {
+	@apply bg-surface text-ink font-sans;
+}
+
+.material-symbols-outlined {
+	font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+@tailwind components;
+@tailwind utilities;

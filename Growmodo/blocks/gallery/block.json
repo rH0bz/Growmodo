@@ -1,0 +1,29 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/gallery",
+	"title": "Gallery",
+	"category": "growmodo-blocks",
+	"icon": "format-gallery",
+	"description": "Photo mosaic panel + heading, framed in its own bordered card.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Explore Estatein's World" },
+		"body": { "type": "string", "default": "Step inside the world of Estatein, where professionalism meets warmth, and expertise meets passion. Our gallery offers a glimpse into our team and workspaces." },
+		"images": {
+			"type": "array",
+			"default": [
+				{ "url": "", "alt": "", "file": "gallery-1.png" },
+				{ "url": "", "alt": "", "file": "gallery-2.png" },
+				{ "url": "", "alt": "", "file": "gallery-3.png" },
+				{ "url": "", "alt": "", "file": "gallery-4.png" },
+				{ "url": "", "alt": "", "file": "gallery-5.png" }
+			]
+		},
+		"largeImageUrl": { "type": "string", "default": "" },
+		"largeImageAlt": { "type": "string", "default": "Inside Estatein" }
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/gallery/index.js",
+	"render": "file:./render.php"
+}

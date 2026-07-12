@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/contact-form",
+	"title": "Contact Form",
+	"category": "growmodo-blocks",
+	"icon": "email",
+	"description": "Real lead-capture form (posts to admin-post.php, emails the site admin).",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Let's Connect" },
+		"body": { "type": "string", "default": "We're excited to connect with you and learn more about your real estate goals. Use the form below to get in touch with Estatein." },
+		"submitLabel": { "type": "string", "default": "Send Your Message" }
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/contact-form/index.js",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/testimonials",
+	"title": "Testimonials",
+	"category": "growmodo-blocks",
+	"icon": "star-filled",
+	"description": "Client testimonial card grid.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "What Our Clients Say" },
+		"body": { "type": "string", "default": "Read the success stories and heartfelt testimonials from our valued clients. Discover why they chose Estatein for their real estate needs." },
+		"viewAllLabel": { "type": "string", "default": "View All Testimonials" },
+		"items": {
+			"type": "array",
+			"default": [
+				{ "heading": "Exceptional Service!", "quote": "Our experience with Estatein was outstanding. Their team's dedication and professionalism made finding our dream home a breeze. Highly recommended!", "name": "Wade Warren", "location": "USA, California", "avatarUrl": "", "avatarFile": "avatar-1.png" },
+				{ "heading": "Efficient and Reliable", "quote": "Estatein provided us with top-notch service. They helped us sell our property quickly and at a great price. We couldn't be happier with the results.", "name": "Emelie Thomson", "location": "USA, Florida", "avatarUrl": "", "avatarFile": "avatar-2.png" },
+				{ "heading": "Trusted Advisors", "quote": "The Estatein team guided us through the entire buying process. Their knowledge and commitment to our needs were impressive. Thank you for your support!", "name": "John Mans", "location": "USA, Nevada", "avatarUrl": "", "avatarFile": "avatar-3.png" }
+			]
+		}
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/testimonials/index.js",
+	"render": "file:./render.php"
+}

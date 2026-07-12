@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/archive-search-bar",
+	"title": "Archive Search Bar",
+	"category": "growmodo-blocks",
+	"icon": "search",
+	"description": "Real GET-based search + 5-facet filter bar for the property archive (Location, Property Type, Pricing Range, Property Size, Build Year) — the theme's one live, query-driving behavior (Property Filter in the SOT).",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Find Your Dream Property" },
+		"body": { "type": "string", "default": "Welcome to Estatein, where your dream property awaits in every corner of our beautiful world. Explore our curated selection of properties." },
+		"searchLabel": { "type": "string", "default": "Search For A Property" },
+		"findLabel": { "type": "string", "default": "Find Property" }
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/archive-search-bar/index.js",
+	"render": "file:./render.php"
+}

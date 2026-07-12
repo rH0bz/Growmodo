@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/featured-properties",
+	"title": "Featured Properties",
+	"category": "growmodo-blocks",
+	"icon": "grid-view",
+	"description": "Live grid of the most recent `property` posts (dynamic — queries the CPT, not static content).",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Featured Properties" },
+		"body": { "type": "string", "default": "Explore our handpicked selection of featured properties. Each listing offers a glimpse into exceptional homes and investments available through Estatein." },
+		"viewAllLabel": { "type": "string", "default": "View All Properties" },
+		"count": { "type": "number", "default": 3 }
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/featured-properties/index.js",
+	"render": "file:./render.php"
+}

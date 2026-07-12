@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/contact-info-bar",
+	"title": "Contact Info Bar",
+	"category": "growmodo-blocks",
+	"icon": "phone",
+	"description": "Heading + 4 quick-contact chips (email, phone, HQ, social).",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Get in Touch with Estatein" },
+		"body": { "type": "string", "default": "Welcome to Estatein's Contact Us page. We're here to assist you with any inquiries, requests, or feedback you may have." },
+		"items": {
+			"type": "array",
+			"default": [
+				{ "icon": "contact-mail.svg", "label": "info@estatein.com" },
+				{ "icon": "contact-phone.svg", "label": "+1 (123) 456-7890" },
+				{ "icon": "contact-location.svg", "label": "Main Headquarters" },
+				{ "icon": "contact-social.svg", "label": "Instagram, LinkedIn, Facebook" }
+			]
+		}
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/contact-info-bar/index.js",
+	"render": "file:./render.php"
+}

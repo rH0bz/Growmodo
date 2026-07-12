@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/office-locations",
+	"title": "Office Locations",
+	"category": "growmodo-blocks",
+	"icon": "store",
+	"description": "Tab bar (static, per SOT) + office card grid.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Discover Our Office Locations" },
+		"body": { "type": "string", "default": "Estatein is here to serve you across multiple locations. Whether you're looking to meet our team, discuss real estate opportunities, or simply drop by for a chat, we have offices conveniently located to serve your needs." },
+		"tabs": { "type": "array", "default": [ "All", "Regional", "International" ] },
+		"offices": {
+			"type": "array",
+			"default": [
+				{ "label": "Main Headquarters", "address": "123 Estatein Plaza, City Center, Metropolis", "body": "Our main headquarters serve as the heart of Estatein. Located in the bustling city center, this is where our core team of experts operates.", "email": "info@estatein.com", "phone": "+1 (123) 456-7890", "city": "Metropolis" },
+				{ "label": "Regional Offices", "address": "456 Urban Avenue, Downtown District, Metropolis", "body": "Estatein's presence extends to multiple regions, each with its own dynamic real estate landscape.", "email": "info@restatein.com", "phone": "+1 (123) 628-7890", "city": "Metropolis" }
+			]
+		}
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/office-locations/index.js",
+	"render": "file:./render.php"
+}

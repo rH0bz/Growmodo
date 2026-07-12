@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/our-clients",
+	"title": "Our Clients",
+	"category": "growmodo-blocks",
+	"icon": "groups-3",
+	"description": "Client testimonial cards with fact pairs.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Our Valued Clients" },
+		"body": { "type": "string", "default": "At Estatein, we have had the privilege of working with a diverse range of clients across various industries." },
+		"items": {
+			"type": "array",
+			"default": [
+				{ "since": "Since 2019", "name": "ABC Corporation", "domain": "Commercial Real Estate", "category": "Luxury Home Development", "quote": "Estatein's expertise in finding the perfect office space for our expanding operations was invaluable. They truly understand our business needs." },
+				{ "since": "Since 2018", "name": "GreenTech Enterprises", "domain": "Commercial Real Estate", "category": "Retail Space", "quote": "Estatein's ability to identify prime retail locations helped us expand our brand presence. They are a trusted partner in our growth." }
+			]
+		}
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/our-clients/index.js",
+	"render": "file:./render.php"
+}

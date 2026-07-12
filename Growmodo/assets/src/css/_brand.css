@@ -1,0 +1,207 @@
+/**
+ * Growmodo — brand utility layer (single source of truth for styling).
+ * Imported by BOTH main.css (frontend, with preflight) and editor.css (editor
+ * canvas, preflight disabled) via postcss-import, so every block looks
+ * identical in wp-admin and on the live site. Restyle the whole site by
+ * editing ONE utility here.
+ *
+ * Aesthetic: dark theme by default — near-black surfaces (surface/surface-alt),
+ * one purple accent, Urbanist type, 12px card radius / 10px button radius /
+ * 100px pill radius, a recurring "outer glow" box-shadow frame device.
+ */
+
+@layer components {
+	/* ---------- Layout ---------- */
+	.container-page {
+		@apply max-w-container mx-auto px-6 md:px-10;
+	}
+	.section {
+		@apply py-16 md:py-24;
+	}
+
+	/* ---------- Type helpers ---------- */
+	.h-display {
+		@apply font-display text-4xl md:text-display text-heading font-semibold;
+	}
+	.h2 {
+		@apply font-display text-3xl md:text-h2-size text-heading font-semibold;
+	}
+	.h3 {
+		@apply font-display text-xl md:text-h3-size text-heading font-semibold;
+	}
+	.stat-number {
+		@apply font-display text-2xl md:text-stat text-heading font-bold;
+	}
+	.lead {
+		@apply font-sans text-base md:text-body text-ink;
+	}
+	.prose-body {
+		@apply font-sans text-base md:text-body text-ink;
+	}
+	.prose-body p + p {
+		@apply mt-4;
+	}
+
+	/* ---------- Section header (heading + paragraph + trailing "View All" CTA) ---------- */
+	.section-header {
+		@apply flex flex-col md:flex-row md:items-end md:justify-between gap-6;
+	}
+	/* Small decorative circle-cluster accent the export places near most section
+	   headings (raw: 3 overlapping-circle SVGs peeking through offset frames,
+	   ~68x30px, positioned left:-20px;top:-40px of the heading text). Applied
+	   here once so every block sharing .section-header gets it for free. */
+	.section-header > :first-child > .h2 {
+		position: relative;
+	}
+	.section-header > :first-child > .h2::before {
+		content: '';
+		position: absolute;
+		left: -20px;
+		top: -32px;
+		width: 48px;
+		height: 21px;
+		background-image: url('../../icons/section-accent.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		opacity: 0.5;
+		pointer-events: none;
+	}
+
+	/* ---------- Cards & panels ---------- */
+	.card {
+		@apply rounded-lg border border-surface-line bg-surface transition-all duration-300;
+	}
+	.card-alt {
+		@apply rounded-lg border border-surface-line bg-surface-alt transition-all duration-300;
+	}
+	.card-hover:hover {
+		@apply border-ink/40;
+		transform: translateY( -4px );
+	}
+	.panel {
+		@apply rounded-lg border border-surface-line bg-surface-alt;
+	}
+	.divider-v {
+		@apply w-px self-stretch bg-surface-line shrink-0;
+	}
+	.divider-h {
+		@apply h-px w-full bg-surface-line;
+	}
+
+	/* ---------- Buttons (10px radius, per Buttons token) ---------- */
+	.btn-primary {
+		@apply inline-flex items-center justify-center gap-2 rounded bg-accent text-on-dark font-sans font-medium text-base px-6 py-[18px] transition-colors duration-200;
+	}
+	.btn-primary:hover {
+		@apply bg-accent-hover;
+	}
+	.btn-secondary {
+		@apply inline-flex items-center justify-center gap-2 rounded border border-surface-line bg-surface-alt text-heading font-sans font-medium text-base px-6 py-[18px] transition-colors duration-200;
+	}
+	.btn-secondary:hover {
+		@apply border-ink/50;
+	}
+	.btn-icon {
+		@apply inline-flex items-center justify-center rounded-full border border-surface-line w-11 h-11 text-heading transition-colors duration-200 shrink-0;
+	}
+	.btn-icon:hover {
+		@apply border-ink/50;
+	}
+	.link-text {
+		@apply inline-flex items-center gap-1 text-heading font-sans font-medium underline decoration-surface-line underline-offset-4;
+	}
+
+	/* ---------- Header nav ---------- */
+	.nav-link {
+		@apply text-heading/90 font-sans text-base transition-colors duration-200;
+	}
+	.nav-link:hover,
+	.nav-link.is-active {
+		@apply text-on-dark;
+	}
+	.nav-pill {
+		@apply rounded border border-surface-line bg-surface px-6 py-3.5 text-heading font-sans text-base;
+	}
+
+	/* ---------- Facts / badge pills (bed, bath, property type) ---------- */
+	.facts-pill {
+		@apply inline-flex items-center gap-2 text-heading/90 font-sans text-sm;
+	}
+	.tagline {
+		@apply text-ink font-sans text-sm uppercase tracking-wide;
+	}
+
+	/* ---------- Icon badges (Feature Tile / Value Item) ---------- */
+	.icon-badge {
+		@apply inline-flex items-center justify-center rounded-pill p-3.5 shrink-0;
+		border: 1px solid transparent;
+		border-image: linear-gradient( 40.65deg, rgba( 166, 133, 250, 1 ) 0%, rgba( 166, 133, 250, 0 ) 45% ) 1;
+	}
+	.icon-inline {
+		@apply material-symbols-outlined align-middle leading-none;
+	}
+
+	/* ---------- Hero floating badge (Sections/Hero.md: circular rotating-text
+	   ring + centered arrow icon; see growmodo_circular_text() in functions.php
+	   for the per-letter spans this wraps) ---------- */
+	.hero-badge {
+		@apply absolute z-10 flex items-center justify-center rounded-full;
+		top: -32px;
+		right: -32px;
+		width: 160px;
+		height: 160px;
+		background: var( --grey-08, #141414 );
+		border: 1.5px solid var( --grey-15, #262626 );
+	}
+	.hero-badge-ring {
+		@apply block relative w-full h-full;
+	}
+	.hero-badge-char {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform-origin: 0 0;
+		font-family: theme( 'fontFamily.sans', sans-serif );
+		font-size: 10.5px;
+		font-weight: 600;
+		white-space: pre;
+		color: rgba( 255, 255, 255, 0.85 );
+	}
+	.hero-badge-core {
+		@apply absolute inset-0 m-auto flex items-center justify-center rounded-full;
+		width: 80px;
+		height: 80px;
+		background: var( --grey-10, #1a1a1a );
+		border: 1.5px solid var( --grey-15, #262626 );
+	}
+
+	/* ---------- Forms ---------- */
+	.field-label {
+		@apply block text-heading font-sans text-sm font-semibold mb-2;
+	}
+	.field {
+		@apply w-full rounded border border-surface-line bg-surface-alt px-4 py-3.5 font-sans text-sm text-heading placeholder:text-ink transition-colors duration-200;
+	}
+	.field:focus {
+		@apply outline-none border-accent;
+	}
+	.field-select {
+		@apply field flex items-center justify-between gap-2;
+	}
+
+	/* ---------- Recurring "outer glow" frame device ---------- */
+	/* box-shadow: 0 0 0 Npx rgba(25,25,25,1) — Hero feature strip, FAQ Item,
+	   Client Card, Archive Search Bar's search field. Utilities registered as
+	   shadow-glow / shadow-glow-sm in tailwind.config.js. */
+
+	/* ---------- Pager (the repeating "01 of N" + prev/next control) ---------- */
+	.pager {
+		@apply flex items-center justify-between gap-4 pt-4;
+	}
+	.pager-count {
+		@apply font-sans text-sm text-ink;
+	}
+	.pager-count strong {
+		@apply text-heading;
+	}
+}

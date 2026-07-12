@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/archive-grid",
+	"title": "Archive Grid",
+	"category": "growmodo-blocks",
+	"icon": "grid-view",
+	"description": "The real filtered/paginated `property` CPT query — reads the same $_GET params as Archive Search Bar (Property Filter behavior).",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Discover a World of Possibilities" },
+		"body": { "type": "string", "default": "Our portfolio of properties is as diverse as your dreams. Explore the following categories to find the perfect property that resonates with your vision of home." },
+		"perPage": { "type": "number", "default": 3 }
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/archive-grid/index.js",
+	"render": "file:./render.php"
+}

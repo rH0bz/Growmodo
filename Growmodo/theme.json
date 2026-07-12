@@ -1,0 +1,62 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"appearanceTools": false,
+		"color": {
+			"custom": false,
+			"customDuotone": false,
+			"customGradient": false,
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"palette": []
+		},
+		"typography": {
+			"customFontSize": false,
+			"fontStyle": false,
+			"fontWeight": false,
+			"letterSpacing": false,
+			"lineHeight": false,
+			"fontFamilies": []
+		},
+		"spacing": {
+			"padding": false,
+			"margin": false,
+			"blockGap": false,
+			"units": []
+		},
+		"border": {
+			"color": false,
+			"radius": false,
+			"style": false,
+			"width": false
+		},
+		"layout": {
+			"contentSize": "1440px",
+			"wideSize": "1440px"
+		},
+		"useRootPaddingAwareAlignments": false
+	},
+	"styles": {
+		"spacing": {
+			"blockGap": "0"
+		}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		}
+	],
+	"customTemplates": [
+		{ "name": "page-about", "title": "Growmodo — About", "postTypes": [ "page" ] },
+		{ "name": "page-contact", "title": "Growmodo — Contact", "postTypes": [ "page" ] },
+		{ "name": "page-services", "title": "Growmodo — Services", "postTypes": [ "page" ] }
+	]
+}

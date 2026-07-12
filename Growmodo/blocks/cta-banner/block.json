@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/cta-banner",
+	"title": "CTA Banner",
+	"category": "growmodo-blocks",
+	"icon": "megaphone",
+	"description": "Closing call-to-action band — reused verbatim on Home / About / Contact / Services, per the SOT.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Start Your Real Estate Journey Today" },
+		"body": { "type": "string", "default": "Your dream property is just a click away. Whether you're looking for a new home, a strategic investment, or expert real estate advice, Estatein is here to assist you every step of the way." },
+		"ctaLabel": { "type": "string", "default": "Explore Properties" },
+		"ctaUrl": { "type": "string", "default": "/properties/" }
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/cta-banner/index.js",
+	"render": "file:./render.php"
+}

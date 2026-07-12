@@ -1,0 +1,35 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/site-footer",
+	"title": "Site Footer",
+	"category": "growmodo-blocks",
+	"icon": "editor-contract",
+	"description": "Global footer (Growmodo): brand + newsletter, 5 link columns, legal row + social icons.",
+	"keywords": [ "footer", "global" ],
+	"textdomain": "growmodo",
+	"attributes": {
+		"brand": { "type": "string", "default": "Estatein" },
+		"newsletterPlaceholder": { "type": "string", "default": "Enter Your Email" },
+		"columns": {
+			"type": "array",
+			"default": [
+				{ "title": "Home", "links": [ "Hero Section", "Features", "Properties", "Testimonials", "FAQ's" ] },
+				{ "title": "About Us", "links": [ "Our Story", "Our Works", "How It Works", "Our Team", "Our Clients" ] },
+				{ "title": "Properties", "links": [ "Portfolio", "Categories" ] },
+				{ "title": "Services", "links": [ "Valuation Mastery", "Strategic Marketing", "Negotiation Wizardry", "Closing Success", "Property Management" ] },
+				{ "title": "Contact Us", "links": [ "Contact Form", "Our Offices" ] }
+			]
+		},
+		"copyright": { "type": "string", "default": "@2023 Estatein. All Rights Reserved." }
+	},
+	"supports": {
+		"html": false,
+		"align": false,
+		"color": false,
+		"spacing": false,
+		"typography": false
+	},
+	"editorScript": "file:../../build/blocks/site-footer/index.js",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,28 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/our-process",
+	"title": "Our Process",
+	"category": "growmodo-blocks",
+	"icon": "list-view",
+	"description": "6-step numbered process grid.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Navigating the Estatein Experience" },
+		"body": { "type": "string", "default": "At Estatein, we've designed a straightforward process to help you find and purchase your dream property with ease. Here's a step-by-step guide to how it all works." },
+		"steps": {
+			"type": "array",
+			"default": [
+				{ "number": "Step 01", "title": "Discover a World of Possibilities", "body": "Your journey begins with exploring our carefully curated property listings. Use our intuitive search tools to filter properties based on your preferences, including location, type, size, and budget." },
+				{ "number": "Step 02", "title": "Narrowing Down Your Choices", "body": "Once you've found properties that catch your eye, save them to your account or make a shortlist. This allows you to compare and revisit your favorites as you make your decision." },
+				{ "number": "Step 03", "title": "Personalized Guidance", "body": "Have questions about a property or need more information? Our dedicated team of real estate experts is just a call or message away." },
+				{ "number": "Step 04", "title": "See It for Yourself", "body": "Arrange viewings of the properties you're interested in. We'll coordinate with the property owners and accompany you to ensure you get a firsthand look at your potential new home." },
+				{ "number": "Step 05", "title": "Making Informed Decisions", "body": "Before making an offer, our team will assist you with due diligence, including property inspections, legal checks, and market analysis." },
+				{ "number": "Step 06", "title": "Getting the Best Deal", "body": "We'll help you negotiate the best terms and prepare your offer. Our goal is to secure the property at the right price and on favorable terms." }
+			]
+		}
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/our-process/index.js",
+	"render": "file:./render.php"
+}

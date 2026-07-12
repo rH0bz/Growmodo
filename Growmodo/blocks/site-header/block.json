@@ -1,0 +1,36 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/site-header",
+	"title": "Site Header",
+	"category": "growmodo-blocks",
+	"icon": "menu",
+	"description": "Global header (Growmodo): announcement banner + nav bar with centered pill nav and Contact Us CTA. Single source of truth — edit here, never duplicate.",
+	"keywords": [ "header", "navigation", "global" ],
+	"textdomain": "growmodo",
+	"attributes": {
+		"brand": { "type": "string", "default": "Estatein" },
+		"bannerText": { "type": "string", "default": "✨Discover Your Dream Property with Estatein" },
+		"bannerCta": { "type": "string", "default": "Learn More" },
+		"navItems": {
+			"type": "array",
+			"default": [
+				{ "label": "Home", "url": "/" },
+				{ "label": "About Us", "url": "/about/" },
+				{ "label": "Properties", "url": "/properties/" },
+				{ "label": "Services", "url": "/services/" }
+			]
+		},
+		"ctaLabel": { "type": "string", "default": "Contact Us" },
+		"ctaUrl": { "type": "string", "default": "/contact/" }
+	},
+	"supports": {
+		"html": false,
+		"align": false,
+		"color": false,
+		"spacing": false,
+		"typography": false
+	},
+	"editorScript": "file:../../build/blocks/site-header/index.js",
+	"render": "file:./render.php"
+}

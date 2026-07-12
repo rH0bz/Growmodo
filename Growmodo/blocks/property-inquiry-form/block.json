@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/property-inquiry-form",
+	"title": "Property Inquiry Form",
+	"category": "growmodo-blocks",
+	"icon": "email",
+	"description": "\"Inquire About [Property]\" form, pre-filled with the current property. Real submission via admin-post.php.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"submitLabel": { "type": "string", "default": "Send Your Message" }
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/property-inquiry-form/index.js",
+	"render": "file:./render.php"
+}

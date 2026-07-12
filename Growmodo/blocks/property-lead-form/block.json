@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/property-lead-form",
+	"title": "Property Lead Form",
+	"category": "growmodo-blocks",
+	"icon": "email",
+	"description": "\"Let's Make it Happen\" lead-capture form on the archive — real submission via admin-post.php.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Let's Make it Happen" },
+		"body": { "type": "string", "default": "Ready to take the first step toward your dream property? Fill out the form below, and our real estate wizards will work their magic to find your perfect match." },
+		"submitLabel": { "type": "string", "default": "Send Your Message" }
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/property-lead-form/index.js",
+	"render": "file:./render.php"
+}

@@ -1,0 +1,67 @@
+/**
+ * Growmodo — base-layer reset. Imported ONLY by main.css (frontend), paired
+ * with that file's `@tailwind base;`. Never imported by editor.css — Tailwind
+ * errors if `@layer base` has no matching `@tailwind base` in the same file,
+ * and preflight is deliberately omitted in the editor canvas so the wp-admin /
+ * Gutenberg chrome is never touched.
+ */
+
+@layer base {
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-surface text-ink font-sans text-body;
+		-webkit-font-smoothing: antialiased;
+		text-rendering: optimizeLegibility;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin: 0;
+		font-weight: inherit;
+		color: theme( 'colors.heading' );
+	}
+
+	p {
+		margin: 0;
+	}
+
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	img,
+	svg {
+		display: block;
+		max-width: 100%;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	button {
+		font: inherit;
+		cursor: pointer;
+	}
+
+	.material-symbols-outlined {
+		font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+	}
+}

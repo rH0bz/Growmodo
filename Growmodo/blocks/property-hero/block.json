@@ -1,0 +1,14 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/property-hero",
+	"title": "Property Hero",
+	"category": "growmodo-blocks",
+	"icon": "cover-image",
+	"description": "Single property: title + location + price + image gallery. Reads the current `property` post in the loop — no editable attributes.",
+	"textdomain": "growmodo",
+	"attributes": {},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/property-hero/index.js",
+	"render": "file:./render.php"
+}

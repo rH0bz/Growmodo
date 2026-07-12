@@ -1,0 +1,12 @@
+/**
+ * Frontend Tailwind entry -> build/frontend.css
+ * @import statements must precede all other statements (postcss-import
+ * requirement), so both imports come before the @tailwind directives.
+ * Preflight (@tailwind base) + the base-layer reset live ONLY here,
+ * never in editor.css.
+ */
+@import './_reset.css';
+@import './_brand.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

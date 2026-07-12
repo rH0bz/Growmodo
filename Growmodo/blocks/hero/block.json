@@ -1,0 +1,41 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/hero",
+	"title": "Hero",
+	"category": "growmodo-blocks",
+	"icon": "cover-image",
+	"description": "Home hero: headline + stats + portrait image, plus a 4-item feature strip.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Discover Your Dream Property with Estatein" },
+		"body": { "type": "string", "default": "Your journey to finding the perfect property begins here. Explore our listings to find the home that matches your dreams." },
+		"primaryCta": { "type": "string", "default": "Browse Properties" },
+		"primaryUrl": { "type": "string", "default": "/properties/" },
+		"secondaryCta": { "type": "string", "default": "Learn More" },
+		"secondaryUrl": { "type": "string", "default": "/about/" },
+		"imageUrl": { "type": "string", "default": "" },
+		"imageAlt": { "type": "string", "default": "A featured Estatein property" },
+		"badgeText": { "type": "string", "default": "✨ Discover Your Dream Property " },
+		"stats": {
+			"type": "array",
+			"default": [
+				{ "number": "200+", "label": "Happy Customers" },
+				{ "number": "10k+", "label": "Properties For Clients" },
+				{ "number": "16+", "label": "Years of Experience" }
+			]
+		},
+		"features": {
+			"type": "array",
+			"default": [
+				{ "icon": "feature-dream-home.svg", "label": "Find Your Dream Home" },
+				{ "icon": "feature-property-value.svg", "label": "Unlock Property Value" },
+				{ "icon": "feature-management.svg", "label": "Effortless Property Management" },
+				{ "icon": "feature-insights.svg", "label": "Smart Investments, Informed Decisions" }
+			]
+		}
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/hero/index.js",
+	"render": "file:./render.php"
+}

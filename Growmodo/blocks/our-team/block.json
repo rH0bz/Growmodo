@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "growmodo/our-team",
+	"title": "Our Team",
+	"category": "growmodo-blocks",
+	"icon": "groups",
+	"description": "4-person team grid.",
+	"textdomain": "growmodo",
+	"attributes": {
+		"heading": { "type": "string", "default": "Meet the Estatein Team" },
+		"body": { "type": "string", "default": "At Estatein, our success is driven by the dedication and expertise of our team. Get to know the people behind our mission to make your real estate dreams a reality." },
+		"members": {
+			"type": "array",
+			"default": [
+				{ "name": "Max Mitchell", "role": "Founder", "photoUrl": "", "photoFile": "team-1.png" },
+				{ "name": "Sarah Johnson", "role": "Chief Real Estate Officer", "photoUrl": "", "photoFile": "team-2.png" },
+				{ "name": "David Brown", "role": "Head of Property Management", "photoUrl": "", "photoFile": "team-3.png" },
+				{ "name": "Michael Turner", "role": "Legal Counsel", "photoUrl": "", "photoFile": "team-4.png" }
+			]
+		}
+	},
+	"supports": { "html": false, "align": false, "color": false, "spacing": false, "typography": false },
+	"editorScript": "file:../../build/blocks/our-team/index.js",
+	"render": "file:./render.php"
+}
